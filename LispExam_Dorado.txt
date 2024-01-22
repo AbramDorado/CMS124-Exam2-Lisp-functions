@@ -1,0 +1,28 @@
+1. Item number 1
+
+(defun dupli (list)
+  (if (null list)
+      '()
+      (cons (first list)
+            (cons (first list)
+                  (dupli (rest list))))))
+
+Output ex:
+(dupli '(a b c))
+=> (a a b b c c )
+
+3. Item number 3
+
+(defun range (x y)
+  (if (= x y)
+      (list x)
+      (if (< x y)
+          (cons x (range (1+ x) y))
+          (cons x (range (1- x) y)))))
+
+Output ex:
+(range 1 5)
+=> (1 2 3 4 5)
+
+(range 5 1)
+=> (5 4 3 2 1)
